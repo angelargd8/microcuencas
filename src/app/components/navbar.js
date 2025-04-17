@@ -35,7 +35,6 @@ const Navbar = ({className}) => {
 
     return (
       <div 
-      // className={`${styles.navbar} ${!showNavbar ? styles.hidden : ''} ${className}`} 
       className={`${styles.navbar} ${!showNavbar ? styles.hidden : ''} ${className}`}
       >
              
