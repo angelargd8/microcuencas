@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import ExampleButton from "./components/button";
 import './globals.css';
 import Navbar from "./components/navbar";
-
+import LandingTextfield from "./components/textfield";
 
 
 export default function Home() {
@@ -60,6 +60,24 @@ export default function Home() {
             location = {'page'}
             onClick={handleClick}
           />
+
+        <div className={styles.landingTextfield}>
+          <LandingTextfield
+            title= {'TITULO 1'}
+            text= {'TEXTOOOOOOOOOOOOOOOOOOO'}
+            location = {'landingPage'}
+          />
+
+        </div>
+
+        <div className={styles.ExampleTextfield}>
+          <LandingTextfield
+            title= {'TITULO 2 '}
+            text= {'TEXTOOOOOOOOOOOOOOOOOOO'}
+            location = {'normal'}
+          />
+
+        </div>
 
 
         </div>
