@@ -1,14 +1,24 @@
 'use client';
 import styles from './button.module.css';
-const Button = ({ text, className = '', onClick }) => {
+const Button = ({ text, className = '', location='', onClick }) => {
   return (
-    <button
-      className={`${styles.btn} ${className}`}
-      onClick={onClick}
-    >
-      {" "}
-      {text}{" "}
-    </button>
+    <>
+      {location === 'navbar' ? (
+        <button
+          className={`${styles.navbar} ${className}`}
+          onClick={onClick}
+        >
+          {text}
+        </button>
+      ) : (
+        <button
+          className={`${styles.btn} ${className}`}
+          onClick={onClick}
+        >
+          {text}
+        </button>
+      )}
+    </>
   );
 };
 

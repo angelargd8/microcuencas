@@ -1,3 +1,4 @@
+@media (max-width: 600px) {
 
 .btn{
     padding: 15px 20px;
@@ -11,9 +12,22 @@
     font-weight: 550;
 }
 
+.navbar{
+    color: var(--foreground);
+    border-color: var(--text-secondary-color);
+    padding: 13px 17px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 550;
+
+}
 
 @media (hover: hover) and (pointer: fine) {
     .btn:hover {
         background-color: var(--btn-primary-color-hover);
     }
+}
+
 }
