@@ -9,7 +9,7 @@
         grid-row-start: 1;
         width: 100%;
         font-size: larger;
-        position: fixed;
+        position: fixed; /* esto es lo que hace que cuando se haga scroll, se vea bien*/
         top: 0;
         left: 0;
         right: 0;
