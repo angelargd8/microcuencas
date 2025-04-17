@@ -1,12 +1,13 @@
-import './button.css';
-
-const Button = ({children, classname, style, onClick}) => {
+'use client';
+import styles from './button.module.css';
+const Button = ({ text, className = '', onClick }) => {
   return (
-    <button 
-        className={`btn ${classname}`} 
-        style={style} 
-        onClick={onClick}>
-      {children}
+    <button
+      className={`${styles.btn} ${className}`}
+      onClick={onClick}
+    >
+      {" "}
+      {text}{" "}
     </button>
   );
 };
