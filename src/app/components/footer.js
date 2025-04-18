@@ -1,6 +1,6 @@
-const footer = ({children, className, style, onClick}) => {
+const footer = ({ className, style}) => {
     return (
-      <div className={`footer ${className}`} style={style} onClick={onClick}>
+      <div className={`footer ${className}`} style={style} >
 
       </div>
     );

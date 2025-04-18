@@ -59,6 +59,7 @@ export default function Home() {
             location = {'page'}
             onClick={handleClick}
           />
+        </div>
 
         {/* <div className={styles.ExampleTextfield}>
           <LandingTextfield
@@ -70,7 +71,7 @@ export default function Home() {
         </div> */}
 
 
-        </div>
+        
 
         </div>
 
