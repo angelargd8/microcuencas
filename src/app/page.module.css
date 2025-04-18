@@ -110,6 +110,50 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
+
+  .btn{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+  }
+
+  .landingTextfield{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+  }
+
+  .landingImage{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: brightness(50%);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+
+
   .page {
     padding: 0px;
     gap: 0px;
@@ -117,6 +161,7 @@ a.secondary {
     display: grid;
     /* 80px es de la primera fila, en este caso la nav, el 1f el resto y el footer solo un 30px de alto */
     grid-template-rows: 70px 1fr 30px;
+    overflow: hidden;
   }
 
   .navbar{
@@ -124,7 +169,9 @@ a.secondary {
   }
 
   .main {
-    align-items: center;
+    /* align-items: center; */
+    position: relative; 
+    
   }
 
   .main ol {

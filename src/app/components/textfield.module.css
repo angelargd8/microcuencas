@@ -2,19 +2,26 @@
 
     .landingPage{
         color: var(--background);
-        /* color: red; */
         background-color: transparent;
-        background-color: rebeccapurple;
-
+        /* background-color: rebeccapurple; */
+        /* background-color: rgba(0, 0, 0, 0.4); */
         padding: 15px 20px;
-        text-align: center;
-        font-weight: 550;
+        text-align: left;
+        font-weight: 500;
+        margin-top: 40%;
+    }
+
+    .landingPage p{
+        margin-top: 10%;
+        
     }
 
     .landingPage h1{
         font-weight: 700;
         /* margin-bottom: 20px; */
-        text-align: center;
+        text-align: left;
+        /* text-align: center; */
+
     }
     
     .textfield{
@@ -24,7 +31,7 @@
         padding: 13px 17px;
         cursor: pointer;
         /* font-size: 15px; */
-        text-align: center;
+        text-align: left;
         font-weight: 550;
     }
 
