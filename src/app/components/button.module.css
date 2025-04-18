@@ -1,22 +1,22 @@
 @media (max-width: 600px) {
 
-.btn{
+.navbar{
     padding: 15px 20px;
     background-color: var(--btn-primary-color);
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     text-align: center;
     font-weight: 550;
 }
 
-.navbar{
+.btn{
     color: var(--foreground);
     border-color: var(--text-secondary-color);
     padding: 13px 17px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 15px;
     text-align: center;

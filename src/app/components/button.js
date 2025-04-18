@@ -5,14 +5,14 @@ const Button = ({ text, className = '', location='', onClick }) => {
     <>
       {location === 'navbar' ? (
         <button
-          className={`${styles.navbar} ${className}`}
+          className={`${styles.btn} ${className}`}
           onClick={onClick}
         >
           {text}
         </button>
       ) : (
         <button
-          className={`${styles.btn} ${className}`}
+          className={`${styles.navbar} ${className}`}
           onClick={onClick}
         >
           {text}
