@@ -6,7 +6,6 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-
   font-family: var(--font-geist-sans);
 }
 
@@ -158,7 +157,6 @@ a.secondary {
     padding: 0px;
     padding-top: 100px;
     gap: 0px;
-    padding-bottom: 80px;
     display: grid;
     /* 80px es de la primera fila, en este caso la nav, el 1f el resto y el footer solo un 30px de alto */
     grid-template-rows: 70px 1fr 30px;
