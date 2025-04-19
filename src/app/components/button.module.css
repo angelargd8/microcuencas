@@ -1,6 +1,14 @@
-@media (max-width: 600px) {
+.buttonContainer {
+  display: flex;
+  align-self: -100px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.navbar{
+@media (max-width: 600px) {
+  .navbar {
     padding: 15px 20px;
     background-color: var(--btn-primary-color);
     color: white;
@@ -10,9 +18,9 @@
     font-size: 15px;
     text-align: center;
     font-weight: 550;
-}
+  }
 
-.btn{
+  .btn {
     color: var(--foreground);
     border-color: var(--text-secondary-color);
     padding: 13px 17px;
@@ -21,13 +29,14 @@
     font-size: 15px;
     text-align: center;
     font-weight: 550;
+  }
 
-}
-
-@media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) {
     .btn:hover {
-        background-color: var(--btn-primary-color-hover);
+      background-color: var(--btn-primary-color-hover);
     }
+  }
 }
 
-}
+
+

@@ -156,6 +156,7 @@ a.secondary {
 
   .page {
     padding: 0px;
+    padding-top: 100px;
     gap: 0px;
     padding-bottom: 80px;
     display: grid;

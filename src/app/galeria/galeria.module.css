@@ -1,0 +1,124 @@
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--title-text-color);
+  text-align: center;
+  margin-top: 60px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+.yearSelector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  border-bottom: 2px solid #d9e3da;
+  padding-bottom: 1rem;
+}
+
+.yearSelector span {
+  font-size: 1.1rem;
+  color: #444;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.yearSelector span:hover {
+  background-color: #e3f3e9;
+  color: #1d6535;
+}
+
+.yearSelector .active {
+  color: #1d6535;
+  font-weight: 700;
+  border-bottom: 3px solid #1d6535;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.noImages {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContent {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modalImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 999px;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
