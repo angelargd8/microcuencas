@@ -35,49 +35,47 @@ const Navbar = ({className}) => {
 
     return (
       <div 
-      className={`${styles.navbar} ${!showNavbar ? styles.hidden : ''} ${className}`}
+        className={`${styles.navbar} ${!showNavbar ? styles.hidden : ''} ${className}`}
       >
-             
         {/* Logo */}
         <a
           href="/"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ display: 'flex', alignItems: 'center' }}
         >
           <Image
             aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={30}
-            height={30}
+            src="/uvg.svg"
+            alt="UVG logo"
+            width={90}
+            height={40}
+            priority
           />
-          
         </a>
 
+        {/* Menú horizontal (desktop) */}
+        <nav className={styles.menu}>
+          <Link href="/">Inicio</Link>
+          <Link href="/about">Acerca de</Link>
+          <Link href="/galeria">Galería</Link>
+          <Link href="/equipo">Equipo</Link>
+          <Link href="/unirse">Unirse</Link>
+        </nav>
 
-        {/* Botón hamburguesa☰ */}
-        <div >
-          <Button
-            text= {'☰'}
-            location = {'navbar'}
-            onClick={toggleMenu}
-          />
-          {menuOpen && (
-            <div className={styles.dropdownMenu}>
-              <Link href="/">Inicio</Link>
-              <Link href="/about">Acerca de</Link>
-              <Link href="/galeria">Galería</Link>
-              <Link href="/equipo">Equipo</Link>
-              <Link href="/unirse">Unirse</Link>
-
-            </div>
-          )}
-
-          {/* fin Botón hamburguesa☰ */}
-
-        </div>
-
-
+        {/* Botón hamburguesa (móvil) */}
+        <button className={styles.hamburger} onClick={toggleMenu} aria-label="Abrir menú">
+          ☰
+        </button>
+        {menuOpen && (
+          <div className={styles.dropdownMenu}>
+            <Link href="/">Inicio</Link>
+            <Link href="/about">Acerca de</Link>
+            <Link href="/galeria">Galería</Link>
+            <Link href="/equipo">Equipo</Link>
+            <Link href="/unirse">Unirse</Link>
+          </div>
+        )}
       </div>
     );
   };
