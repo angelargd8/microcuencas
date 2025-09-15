@@ -1,45 +1,78 @@
-@media (max-width: 600px) {
+/* - parte mobile */
+.landingPage{
+    color: var(--background);
+    background-color: transparent;
+    /* background-color: rebeccapurple; */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 500;
+    margin-top: 40%;
+}
 
-    .landingPage{
-        color: var(--background);
-        background-color: transparent;
-        /* background-color: rebeccapurple; */
-        /* background-color: rgba(0, 0, 0, 0.4); */
-        padding: 15px 20px;
-        text-align: left;
-        font-weight: 500;
-        margin-top: 40%;
-    }
-
-    .landingPage p{
-        margin-top: 10%;
-        
-    }
-
-    .landingPage h1{
-        font-weight: 700;
-        margin-top: -80px;
-        /* margin-bottom: 20px; */
-        text-align: left;
-        /* text-align: center; */
-
-    }
+.landingPage p{
+    margin-top: 10%;
     
-    .textfield{
-        color: var(--description-text-color);
-        background-color: transparent;
-        border-color: var(--text-secondary-color);
-        padding: 13px 17px;
-        cursor: pointer;
-        /* font-size: 15px; */
-        text-align: left;
-        font-weight: 550;
-    }
+}
 
-    .textfield h1{
-        color: var(--title-text-color);
-        
-    }
+.landingPage h1{
+    font-weight: 700;
+    margin-top: -80px;
+    /* margin-bottom: 20px; */
+    text-align: left;
+    /* text-align: center; */
+
+}
+
+.textfield{
+    color: var(--description-text-color);
+    background-color: transparent;
+    border-color: var(--text-secondary-color);
+    padding: 13px 17px;
+    cursor: pointer;
+    /* font-size: 15px; */
+    text-align: left;
+    font-weight: 550;
+}
+
+.textfield h1{
+    color: var(--title-text-color);
+    
+}
+
+
+/* - parte desktop */
+@media (min-width: 600px) {
+
+.landingPage{
+    color: var(--background);
+    background-color: transparent;
+    /* background-color: rebeccapurple; */
+    padding: 15px 15px;
+    text-align: left;
+    font-weight: 550;
+    margin-top: 7%;
+}
+
+.landingPage p{
+    margin-top: 2%;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 60%;
+    
+}
+
+.landingPage h1{
+    /* background-color: tomato; */
+    font-weight: 800;
+    margin-top: -80px;
+    text-align: left;
+    font-size: 60px;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 50%;
+
+}
 
     
-    }
+}

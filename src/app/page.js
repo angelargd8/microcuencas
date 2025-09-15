@@ -9,10 +9,6 @@ import LandingTextfield from "./components/textfield";
 
 export default function Home() {
 
-  const handleClick = () => {
-    alert('click!');
-  };
-
   return (
     <div className={styles.page}>
 
@@ -53,17 +49,6 @@ export default function Home() {
           href="/about"
         />
           </div>
-
-        {/* <div className={styles.ExampleTextfield}>
-          <LandingTextfield
-            title= {'TITULO 2 '}
-            text= {'TEXTOOOOOOOOOOOOOOOOOOO'}
-            location = {'normal'}
-          />
-
-        </div> */}
-
-
  
         
 
@@ -72,23 +57,7 @@ export default function Home() {
         
       </main>
 
-      {/* <footer className={styles.footer}>
-        
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer> */}
+      
     </div>
   );
 }

@@ -1,3 +1,44 @@
+
+.navbar{
+    background-color: var(--background);
+    color: var(--foreground);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px; 
+    grid-row-start: 1;
+    width: 100%;
+    font-size: larger;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+.dropdownMenu
+{
+    background-color: var(--background);
+    position: absolute;
+    right: 0px;
+    top: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdownMenu a
+{
+    border: 1px var(--text-third-color) solid;
+    padding: 15px 20px;
+
+}
+
+
 @media (max-width: 600px) {
     .navbar{
         background-color: var(--background);
@@ -15,6 +56,7 @@
         right: 0;
         z-index: 100;
         transition: transform 0.3s ease-in-out;
+        color: black;
 
     }
     .hidden {
