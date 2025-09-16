@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "next": "^15.3.0",
-    "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021"
+    "react": "19.0.0-rc-de68d2f4-20241204",
+    "react-dom": "19.0.0-rc-de68d2f4-20241204"
   },
   "devDependencies": {
     "eslint": "^8",
