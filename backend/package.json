@@ -7,7 +7,7 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "jest",
-    "lint": "eslint src/",
+    "lint": "eslint ./ --fix",
     "format": "prettier --write src/"
   },
   "type": "module",
