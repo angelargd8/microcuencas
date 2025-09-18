@@ -1,7 +1,7 @@
 import express from 'express';
-import ContactController from '../controllers/contactController';
-import { validateContactData, logRequest } from '../middleware/validation';
-import { emailRateLimiter } from '../middleware/rateLimiter';
+import ContactController from '../controllers/contactController.js';
+import { validateContactData, logRequest } from '../middleware/validation.js';
+import { emailRateLimiter } from '../middleware/rateLimiter.js';
 
 const router = express.Router();
 const contactController = new ContactController();

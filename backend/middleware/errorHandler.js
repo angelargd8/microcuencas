@@ -1,5 +1,5 @@
-import { HTTP_STATUS, ERROR_CODES } from "../utils/constants";
-import logger from "../utils/logger";
+import { HTTP_STATUS, ERROR_CODES } from "../utils/constants.js";
+import logger from "../utils/logger.js";
 
 /**
  * Middleware para manejo de errores global

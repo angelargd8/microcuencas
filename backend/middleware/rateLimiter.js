@@ -1,7 +1,6 @@
 import rateLimit from 'express-rate-limit';
-import { HTTP_STATUS, ERROR_CODES } from '../utils/constants';
-import appConfig from '../config/app';
-import logger from '../utils/logger';
+import { HTTP_STATUS, ERROR_CODES } from '../utils/constants.js';
+import appConfig from '../config/app.js';
 
 // Rate limiter específico para emails
 const emailRateLimiter = rateLimit({
@@ -18,13 +17,6 @@ const emailRateLimiter = rateLimit({
   skip: (req) => {
     // Skip rate limiting para health checks
     return req.path === '/api/health';
-  },
-  onLimitReached: (req) => {
-    logger.warn('Rate limit alcanzado', {
-      ip: req.ip,
-      userAgent: req.get('User-Agent'),
-      endpoint: req.path
-    });
   }
 });
 

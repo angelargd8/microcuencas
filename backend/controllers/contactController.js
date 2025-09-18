@@ -1,11 +1,11 @@
-import EmailService from "../services/emailService";
-import { HTTP_STATUS, ERROR_CODES } from "../utils/constants";
-import logger from "../utils/logger";
-import { sanitizeString } from "../utils/helpers";
+import EmailService from "../services/emailService.js";
+import { HTTP_STATUS, ERROR_CODES } from "../utils/constants.js";
+import logger from "../utils/logger.js";
+import { sanitizeString } from "../utils/helpers.js";
 
 class ContactController {
   constructor() {
-    this.emailService = new EmailService();
+    this.emailService = EmailService;
     this.stats = {
       emailsEnviados: 0,
       ultimoEmail: null,
@@ -125,7 +125,6 @@ class ContactController {
         memory: process.memoryUsage(),
         checks: {
           emailjsConfig: this.emailService.isInitialized,
-          database: 'not_implemented', // Para futuro
           externalAPIs: 'ok'
         }
       };

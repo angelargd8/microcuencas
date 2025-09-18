@@ -1,4 +1,4 @@
-const { emailConfig } = require('../config/email');
+import { emailConfig } from '../config/email.js';
 
 /**
  * Formatea fecha en zona horaria de Guatemala
