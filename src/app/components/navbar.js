@@ -59,6 +59,7 @@ const Navbar = ({className}) => {
           <Link href="/">Inicio</Link>
           <Link href="/about">Acerca de</Link>
           <Link href="/galeria">Galería</Link>
+          <Link href="/timeline">Noticias</Link>
           <Link href="/equipo">Equipo</Link>
           <Link href="/unirse">Unirse</Link>
         </nav>
@@ -72,6 +73,7 @@ const Navbar = ({className}) => {
             <Link href="/">Inicio</Link>
             <Link href="/about">Acerca de</Link>
             <Link href="/galeria">Galería</Link>
+            <Link href="/timeline">Noticias</Link>
             <Link href="/equipo">Equipo</Link>
             <Link href="/unirse">Unirse</Link>
           </div>
