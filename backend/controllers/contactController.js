@@ -1,11 +1,11 @@
 import EmailService from "../services/emailService.js";
 import { HTTP_STATUS, ERROR_CODES } from "../utils/constants.js";
 import logger from "../utils/logger.js";
-import { sanitizeString } from "../utils/helpers.js";
+import { isUVGEmail,sanitizeString } from "../utils/helpers.js";
 
 class ContactController {
   constructor() {
-    this.emailService = EmailService;
+    this.emailService = new EmailService();
     this.stats = {
       emailsEnviados: 0,
       ultimoEmail: null,
@@ -61,16 +61,25 @@ class ContactController {
       res.status(HTTP_STATUS.OK).json(response);
 
     } catch (error) {
-      // Actualizar estadísticas de error
+      // Actualizar estadísticas
       this.updateStats(false);
       
+      // Log detallado SOLO en logs del servidor
       logger.error('Error procesando contacto:', {
         error: error.message,
-        email: req.body?.email
+        stack: error.stack,
+        email: req.body?.email,
+        timestamp: new Date().toISOString(),
+        userAgent: req.get('User-Agent'),
+        ip: req.ip
       });
 
+      const cleanError = new Error('Error procesando solicitud de contacto');
+      cleanError.name = 'ContactProcessingError';
+      cleanError.statusCode = 500;
+      
       // Delegar al middleware de manejo de errores
-      next(error);
+      next(cleanError);
     }
   }
 

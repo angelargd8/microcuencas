@@ -7,7 +7,7 @@ import 'dotenv/config';
 import appConfig from './config/app.js';
 import { validateConfig } from './config/email.js';
 import { generalRateLimiter } from './middleware/rateLimiter.js';
-import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
+import { errorHandler, notFoundHandler, sanitizeResponse, validateSecurityConfig } from './middleware/errorHandler.js';
 import logger from './utils/logger.js';
 
 // Importar rutas
@@ -21,6 +21,7 @@ class MicrocuencaApp {
 
   initializeApp() {
     try {
+      validateSecurityConfig();
       validateConfig();
       this.setupSecurity();
       this.setupMiddlewares();
@@ -58,6 +59,8 @@ class MicrocuencaApp {
     }
 
     this.app.use(generalRateLimiter);
+    this.app.use(sanitizeResponse)
+
   }
 
   setupMiddlewares() {

@@ -15,8 +15,8 @@ class EmailService {
     initializeEmailJS() {
         try {
             emailjs.init({
-                publicKey: emailConfig.publicKey,
-                privateKey: emailConfig.privateKey,
+                publicKey: emailConfig.emailjs.publicKey,
+                privateKey: emailConfig.emailjs.privateKey,
             });
             this.isInitialized = true;
             logger.info("EmailJS inicializado correctamente.");
@@ -207,4 +207,4 @@ class EmailService {
     }
 }
 
-export default new EmailService();
+export default EmailService;

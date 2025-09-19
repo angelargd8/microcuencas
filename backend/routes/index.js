@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
       health: 'GET /api/health',
       stats: 'GET /api/stats'
     },
-    documentation: 'https://github.com/tu-repo/microcuenca-api',
+    documentation: 'https://github.com/angelargd8/microcuencas',
     timestamp: new Date().toISOString()
   });
 });
