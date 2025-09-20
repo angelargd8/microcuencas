@@ -1,0 +1,3 @@
+[submodule "analisis_satelital"]
+	path = analisis_satelital
+	url = https://github.com/MarchMol/rio_contreras_analisis_satelital.git
