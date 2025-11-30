@@ -1,7 +1,7 @@
 "use client";
 import styles from "../page.module.css";
 import timelineStyles from "./timeline.module.css";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Navbar from "../components/navbar";
 
 export const noticias = [
@@ -39,7 +39,8 @@ export const noticias = [
 ];
 
 export default function Timeline() {
-  const [year, setYear] = useState(2024);
+	const [year, setYear] = useState(2024);
+	const carruselRef = useRef(null);
   const noticiasFiltradas = noticias.filter(n => n.year === year);
   return (
 	<div className={styles.page}>
@@ -107,8 +108,10 @@ export default function Timeline() {
 			  Desarrollar e implementar un plan integral de recuperación y gestión sostenible de la microcuenca del Río Contreras, a través del mejoramiento de la calidad del agua, la reducción de la contaminación, la restauración ecológica y la participación comunitaria, utilizando estrategias basadas en ciencia, infraestructura, comunicación estratégica y tecnología.
 			</span>
 		  </div>
-		  <div className={timelineStyles["timeline-carrusel"]}>
-			<button className={timelineStyles["timeline-carrusel-arrow"]} aria-label="Anterior">&#60;</button>
+		  <div className={timelineStyles["timeline-carrusel"]} ref={carruselRef}>
+			<button className={timelineStyles["timeline-carrusel-arrow"]} aria-label="Anterior" onClick={() => {
+			  const el = carruselRef.current; if (!el) return; el.scrollBy({ left: -320, behavior: "smooth" });
+			}}>&#60;</button>
 			<div className={timelineStyles["timeline-carrusel-card"]}>
 			  <span className={`${timelineStyles["timeline-carrusel-fac"]} ${timelineStyles["ingenieria"]}`}>ING</span>
 			  <span className={timelineStyles["timeline-carrusel-fac-label"]}>FACULTAD DE INGENIERÍA</span>
@@ -139,7 +142,9 @@ export default function Timeline() {
 				<li>Diseño e implementación de un programa de restauración ecológica.</li>
 			  </ul>
 			</div>
-			<button className={timelineStyles["timeline-carrusel-arrow"]} aria-label="Siguiente">&#62;</button>
+			<button className={timelineStyles["timeline-carrusel-arrow"]} aria-label="Siguiente" onClick={() => {
+			  const el = carruselRef.current; if (!el) return; el.scrollBy({ left: 320, behavior: "smooth" });
+			}}>&#62;</button>
 		  </div>
 		</section>
 	  </main>
