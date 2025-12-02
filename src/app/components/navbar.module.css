@@ -66,6 +66,27 @@
     background: #2ecc40;
     color: var(--background);
 }
+.activeLink {
+    background: #d9f9df;
+    color: #0d5315;
+    font-weight: 600;
+}
+
+/* Admin dropdown (desktop) */
+.adminMenu { position: relative; display: flex; align-items: center; }
+.adminTrigger { display: flex; align-items: center; gap:6px; cursor: pointer; padding:8px 14px; border-radius:999px; background: #f2f7f3; border:1px solid #d3e5d6; font: 500 0.85rem/1 Arial, sans-serif; color: #134b1f; transition: background .2s, box-shadow .2s, border-color .2s; }
+.adminTrigger:hover { background:#2ecc40; color: var(--background); }
+.adminTrigger svg { width:18px; height:18px; stroke:#134b1f; }
+.adminTrigger:hover svg { stroke: var(--background); }
+.adminDropdown { position:absolute; top:100%; right:0; background: var(--background); border:1px solid #e2e8e4; box-shadow:0 8px 24px rgba(0,0,0,.08); border-radius:12px; padding:8px 0; min-width:220px; display:flex; flex-direction:column; z-index:120; transform: translateY(6px); }
+.adminDropdown::before { content:""; position:absolute; top:-8px; right:18px; width:14px; height:14px; background: var(--background); border:1px solid #e2e8e4; border-bottom:none; border-right:none; transform: rotate(45deg); box-shadow: -3px -3px 6px -3px rgba(0,0,0,0.08); }
+.adminDropdown a { padding:10px 16px; color: var(--foreground); text-decoration:none; font-size:0.9rem; display:block; }
+.adminDropdown a:hover { background:#2ecc40; color: var(--background); }
+.adminSeparator { height:1px; background:#e5e9e7; margin:4px 0; }
+
+@media (max-width: 600px) {
+    .adminMenu { display:none; }
+}
 
 @media (max-width: 600px) {
     .navbar{
@@ -116,4 +137,5 @@
         background: #2ecc40;
         color: var(--background);
     }
+    .activeLink { background:#2ecc40; color: var(--background); }
 }
