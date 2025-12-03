@@ -65,6 +65,7 @@ const Navbar = ({className}) => {
         <nav className={styles.menu}>
           <Link className={isActive('/') ? styles.activeLink : ''} href="/">Inicio</Link>
           <Link className={isActive('/about') ? styles.activeLink : ''} href="/about">Acerca de</Link>
+          <Link className={isActive('/vis') ? styles.activeLink : ''} href="/vis">Rio Contreras</Link>
           <Link className={isActive('/galeria') ? styles.activeLink : ''} href="/galeria">Galería</Link>
           <Link className={isActive('/timeline') ? styles.activeLink : ''} href="/timeline">Noticias</Link>
           <Link className={isActive('/unirse') ? styles.activeLink : ''} href="/unirse">Unirse</Link>
