@@ -21,7 +21,7 @@ El proyecto multidisciplinario de Microcuenca Pedagógica del Río Contreras es 
 - Preferencia de canales de comunicación para oportunidades.
 
 Prototipo (Figma):
-https://www.figma.com/design/KbSBpnCdHumwO0bqAZEBeg/Microcuencas?node-id=0-1
+[https://www.figma.com/design/KbSBpnCdHumwO0bqAZEBeg/Microcuencas?node-id=0-1](https://www.figma.com/design/i8OIrA5r21G5DjwhuR3lQk/MC-Final?node-id=0-1&t=QLDiOl01AH5UCAH1-1)
 
 ---
 
