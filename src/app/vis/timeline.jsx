@@ -7,8 +7,8 @@ import tmStyles from "./timeline.module.css";
 
 const TimeLineVis = ({visMan})=>{
     const imagesAmount = visMan.rgb.length
-    const min_date = `${visMan.rgb[0].slice(0,4)}-${visMan.rgb[0].slice(4,6)}-${visMan.rgb[0].slice(6,8)}`
-    const max_date =`${visMan.rgb[imagesAmount-1].slice(0,4)}-${visMan.rgb[imagesAmount-1].slice(4,6)}-${visMan.rgb[imagesAmount-1].slice(6,8)}`
+    const min_date = `${visMan.rgb[0].slice(0,4)}`
+    const max_date =`${visMan.rgb[imagesAmount-1].slice(0,4)}`
     const [play, setPlay] = useState(false)
     const playRef = useRef(false);
     const [index, setIndex] = useState(0)
@@ -38,18 +38,23 @@ const TimeLineVis = ({visMan})=>{
     
         {/* Date */}
         <div className={tmStyles.headContainer}>
-            <p>
-                {`${visMan.rgb[index].slice(0,4)}-${visMan.rgb[index].slice(4,6)}-${visMan.rgb[index].slice(6,8)}`}
-            </p>
-            <button onClick={()=>{setShowOverlay(!showOverlay);}}>
-                <Image
-                    className="iconImage"
-                    src="/icons/river.svg"
-                    alt="Refresh"
-                    width={24}
-                    height={18}
-                />
-            </button>
+            <h2>
+                Rio Contreras
+            </h2>
+            <div className={tmStyles.headSub}>
+                <p>
+                    {`${visMan.rgb[index].slice(0,4)}-${visMan.rgb[index].slice(4,6)}-${visMan.rgb[index].slice(6,8)}`}
+                </p>
+                <button onClick={()=>{setShowOverlay(!showOverlay);}}>
+                    <Image
+                        className="iconImage"
+                        src="/icons/river.svg"
+                        alt="Refresh"
+                        width={24}
+                        height={18}
+                    />
+                </button>
+            </div>
         </div>
         {/* Image loader */}
         <div className={tmStyles.imageContainer}>

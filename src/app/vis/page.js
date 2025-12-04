@@ -10,14 +10,18 @@ export default function Vis() {
   return (
     <div className={tmStyles.page}>
       <Navbar />
-        
+        <div className={tmStyles.pageStart}>
+
+
+        </div>
         <h1 className={tmStyles.title}>
           Visualizacion<br />Satelital
         </h1>
       <main className={`${styles.main} ${tmStyles.visContainer}`}>
-        <TimeLineVis visMan={visMan}/>
-        <div className={tmStyles.textContent}>
-          <h2>
+        
+        <div className={tmStyles.pageStart}>
+          <div className={tmStyles.textContent}>
+             <h2>
             Importancia del Monitoreo Satelital
           </h2>
           <p>
@@ -26,25 +30,35 @@ export default function Vis() {
             del Río Contreras y documentar el impacto de nuestras acciones de restauración.
           </p>
 
-          <h2>
-            Índice NDVI (Vegetación)
-          </h2>
-          <p>
-            El NDVI mide la salud y densidad de la vegetación mediante una escala de colores. Los tonos 
-            verdes y amarillos indican vegetación saludable y abundante, mientras que los tonos rojos y 
-            marrones señalan áreas con poca cobertura vegetal o suelo desnudo. Este índice nos ayuda a 
-            identificar zonas de deforestación o éxito en proyectos de reforestación.
-          </p>
+          </div>
+          <TimeLineVis visMan={visMan}/>
+        </div>
 
-          <h2>
-            Índice MNDWI (Cuerpos de Agua)
-          </h2>
-          <p>
-            El MNDWI detecta la presencia y extensión de agua en la superficie. Los valores altos (azules 
-            brillantes) representan cuerpos de agua permanentes, mientras que valores bajos indican zonas 
-            secas o con humedad reducida. Este índice es crucial para monitorear el caudal del río, identificar 
-            puntos de contaminación y evaluar la disponibilidad hídrica en nuestra microcuenca.
-          </p>
+        <div className={tmStyles.textContent}>
+         
+          <div className={tmStyles.textContainer}>
+            <h2>
+            Índice NDVI (Vegetación)
+            </h2>
+            <p>
+              El NDVI mide la salud y densidad de la vegetación mediante una escala de colores. Los tonos 
+              verdes y amarillos indican vegetación saludable y abundante, mientras que los tonos rojos y 
+              marrones señalan áreas con poca cobertura vegetal o suelo desnudo. Este índice nos ayuda a 
+              identificar zonas de deforestación o éxito en proyectos de reforestación.
+            </p>
+          </div>
+
+          <div className={tmStyles.textContainer}>
+            <h2>
+              Índice MNDWI (Cuerpos de Agua)
+            </h2>
+            <p >
+              El MNDWI detecta la presencia y extensión de agua en la superficie. Los valores altos (azules 
+              brillantes) representan cuerpos de agua permanentes, mientras que valores bajos indican zonas 
+              secas o con humedad reducida. Este índice es crucial para monitorear el caudal del río, identificar 
+              puntos de contaminación y evaluar la disponibilidad hídrica en nuestra microcuenca.
+            </p>
+          </div>
         </div>
       </main>
     </div>

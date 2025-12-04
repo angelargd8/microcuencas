@@ -3,22 +3,34 @@
     display: flex;
     flex-direction: column;
     padding-top: 15vh;
+}
 
+.pageStart {
+    display: flex;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+.pageStart > .textContent{
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    flex: 3;
 }
 
 .textContent {
     padding: 10vh;
+    display: flex;
+    gap: 5vh;
 }
 
-
 .textContent p{
-    padding-top: 1vh;
     max-width: 1000px;
     text-align: justify;
+    color: var(--description-text-color);
 }
 
 .textContent h2{
-color: var(--title-text-color);
+    color: var(--title-text-color);
 }
 .title {
     justify-self: center;
@@ -46,14 +58,49 @@ color: var(--title-text-color);
     width: 60vw;
     max-width: 600px;
     padding: 5vh;
-    background: #f2f9f6; 
-    border: 1.5px solid #e0e0e0; 
+    background: linear-gradient(135deg, var(--title-text-color) 0%, var(--btn-primary-color) 100%);
     border-radius: 16px; 
-    box-shadow: 0 2px 12px 0 rgba(37,122,62,0.05);
+    box-shadow: 0 10px 30px rgba(44, 99, 47, 0.2);
 }
 
+.textContainer {
+    padding: 5vh;
+    border-radius: 3vh;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
 /* Head container*/
 .headContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headContainer h2{
+    color: white;
+}
+.headSub {
+    display: flex;
+    justify-content: space-between;
+}
+.headSub p {
+    color: rgba(255, 255, 255, 0.738);
+}
+
+.headSub button {
+    border: none;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    background: rgba(255, 255, 255, 0.2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+}
+.headSub button:hover {
+   background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* .headContainer {
     display: flex;
     justify-content: space-between;
     width: 50vw;
@@ -69,7 +116,7 @@ color: var(--title-text-color);
     border-radius: 0.5vh;
     padding: 0.5vh;
     background-color: var(--background);
-}
+} */
 
 /* image loader */
 
@@ -78,7 +125,6 @@ color: var(--title-text-color);
     display: flex;
     justify-content: center;
     height: 25vw;
-    width: 25vw;
 }
 .imageLoader {
     object-fit: contain;
@@ -97,18 +143,20 @@ color: var(--title-text-color);
 
 /* Radio button styles*/
 .radioContainer{
-    padding-top: 5vh;
     display: flex;
+    padding-top: 2vh;
     justify-content: space-around;
 }
 
 .radioLabel {
     padding: 0.5vh;
     border-radius: 0.5vh;
+    color: rgba(255, 255, 255, 0.809);
+    backdrop-filter: blur(10px);
+    transition: background 0.1s ease-in;
 }
 .radioLabel:hover { 
-    background:#2ecc40; 
-    color: var(--background); 
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .radioOption {
@@ -138,6 +186,7 @@ color: var(--title-text-color);
  gap: 1vh;
 }
 .dateContainer p{
+    color: rgba(255, 255, 255, 0.582);
     font-size: small;
 }
 /* Timeline buttons */
@@ -152,16 +201,22 @@ color: var(--title-text-color);
     gap: 1vh;
 }
 
+
+
 .tmButton {
     border: none;
-    border-radius: 0.5vh;
-    padding: 0.2vh;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    background: rgba(255, 255, 255, 0.2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
     display: flex;
     align-items: center;
 }
 
 .tmButton:hover {
-    background: #2ecc40; 
+    background: rgba(255, 255, 255, 0.5);
 }
 
 
