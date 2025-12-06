@@ -20,15 +20,15 @@ export default function Vis() {
       <main className={`${styles.main} ${tmStyles.visContainer}`}>
         
         <div className={tmStyles.pageStart}>
-          <div className={tmStyles.textContent}>
-             <h2>
-            Importancia del Monitoreo Satelital
-          </h2>
-          <p>
-            La tecnología satelital nos permite observar los cambios en nuestra microcuenca en tiempo real, identificando patrones de deterioro o recuperación que serían invisibles a simple vista. Estas 
-            imágenes son herramientas fundamentales para tomar decisiones informadas sobre la conservación 
-            del Río Contreras y documentar el impacto de nuestras acciones de restauración.
-          </p>
+          <div className={tmStyles.startText}>
+            <h2>
+              Importancia del Monitoreo Satelital
+            </h2>
+            <p>
+              La tecnología satelital nos permite observar los cambios en nuestra microcuenca en tiempo real, identificando patrones de deterioro o recuperación que serían invisibles a simple vista. Estas 
+              imágenes son herramientas fundamentales para tomar decisiones informadas sobre la conservación 
+              del Río Contreras y documentar el impacto de nuestras acciones de restauración.
+            </p>
 
           </div>
           <TimeLineVis visMan={visMan}/>

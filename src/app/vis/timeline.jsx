@@ -56,28 +56,8 @@ const TimeLineVis = ({visMan})=>{
                 </button>
             </div>
         </div>
-        {/* Image loader */}
-        <div className={tmStyles.imageContainer}>
-            <Image
-                className={tmStyles.imageLoader}
-                src={`/assets/vis/${
-                    variation == 1? visMan.ndvi[index] : (variation==2 ? visMan.mndwi[index] : visMan.rgb[index])
-                }`}
-                fill
-                alt="River"
-            />
-            {showOverlay && 
-                <Image
-                    className={tmStyles.imageOverlay}
-                    fill
-                    src="/assets/vis/river_outline.png"
-                    alt="River"
-                />
-            }
 
-        </div>
-
-        {/* Mode selector (RGB, NDVI, MNDWI) */}
+                {/* Mode selector (RGB, NDVI, MNDWI) */}
         <div className={tmStyles.radioContainer}>
             <input 
                 id="rgb"
@@ -118,6 +98,29 @@ const TimeLineVis = ({visMan})=>{
             />
             <label htmlFor="mndwi" className={tmStyles.radioLabel}>MNDWI</label>
         </div>
+        
+        {/* Image loader */}
+        <div className={tmStyles.imageContainer}>
+            <Image
+                className={tmStyles.imageLoader}
+                src={`/assets/vis/${
+                    variation == 1? visMan.ndvi[index] : (variation==2 ? visMan.mndwi[index] : visMan.rgb[index])
+                }`}
+                fill
+                alt="River"
+            />
+            {showOverlay && 
+                <Image
+                    className={tmStyles.imageOverlay}
+                    fill
+                    src="/assets/vis/river_outline.png"
+                    alt="River"
+                />
+            }
+
+        </div>
+
+
 
         {/* Options */}
         <div className={tmStyles.optionContainer}>
