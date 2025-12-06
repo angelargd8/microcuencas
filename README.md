@@ -71,6 +71,13 @@ Estructura de recursos:
 
 ![About](public/about.png)
 
+### Visualizacion Satelital (`/vis`)
+- Importancia de visualizacion satelital
+- Explicacion de indices NDVI y MNDWI y su relevancia para el Rio Contreras y la iniciativa microcuenca.
+- Widget de viualizacion satelital para observar el estado del rio a travez del tiempo.
+
+![Visualizacion](public/visualizacion.png)
+
 ### Galería (`/galeria`)
 - Galería fotográfica con navegación.
 - Muestra de visitas de campo, monitoreo y actividades comunitarias.
