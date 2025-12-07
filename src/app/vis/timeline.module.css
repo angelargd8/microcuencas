@@ -1,0 +1,270 @@
+
+.page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;
+}
+
+.pageStart {
+    display: flex;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    justify-content: center;
+}
+
+.startText{
+    display: flex;
+    flex-direction: column;
+    padding-right: 5vh;
+    flex: 0.5;
+}
+.startText h2{
+    color: var(--title-text-color);
+    padding-bottom: 3vh;
+}
+.startText p{
+    max-width: 1000px;
+    text-align: justify;
+    color: var(--description-text-color);
+}
+
+
+.textContent {
+    padding: 10vh;
+    padding-top: 5vh;
+    display: flex;
+    gap: 5vh;
+}
+
+.textContent p{
+    max-width: 1000px;
+    text-align: justify;
+    color: var(--description-text-color);
+}
+
+.textContent h2{
+    color: var(--title-text-color);
+}
+
+.title {
+    justify-self: center;
+    color: var(--title-text-color);
+    text-align: center;
+    padding-bottom: 5vh;
+    border-bottom: solid 3px #dbe7de;
+}
+
+.visContainer {
+    padding-top: 5vh;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.visContainer *{
+    color: black;
+}
+
+.tmContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: centers;
+    width: 60vw;
+    max-width: 600px;
+    padding: 5vh;
+    background: linear-gradient(135deg, var(--title-text-color) 0%, var(--btn-primary-color) 100%);
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(44, 99, 47, 0.2);
+}
+
+.textContainer {
+    padding: 5vh;
+    border-radius: 3vh;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+/* Head container*/
+.headContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headContainer h2{
+    color: white;
+}
+.headSub {
+    display: flex;
+    justify-content: space-between;
+}
+.headSub p {
+    color: rgba(255, 255, 255, 0.738);
+}
+
+.headSub button {
+    border: none;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    background: rgba(255, 255, 255, 0.2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+}
+.headSub button:hover {
+   background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* .headContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    max-width: 500px;
+    padding-bottom: 3vh;
+}
+.headContainer p{
+    font-weight: bold;
+    
+}
+.headContainer button {
+    border: none;
+    border-radius: 0.5vh;
+    padding: 0.5vh;
+    background-color: var(--background);
+} */
+
+/* image loader */
+
+.imageContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 25vw;
+}
+.imageLoader {
+    object-fit: contain;
+    height: 25vw;
+}
+
+.imageOverlay {
+    object-fit: contain;
+    position: absolute;
+    height: 25vw;
+    
+    top: 0;
+    left: 0;
+    pointer-events: "none";
+}
+
+/* Radio button styles*/
+.radioContainer{
+    display: flex;
+    padding: 2vh;
+    justify-content: space-around;
+}
+
+.radioLabel {
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    color: rgba(255, 255, 255, 0.809);
+    backdrop-filter: blur(10px);
+    transition: background 0.1s ease-in;
+}
+.radioLabel:hover { 
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.radioOption {
+    display: none;
+}
+.radioOption:checked + .radioLabel {
+    background: #d9f9df;
+    color: #0d5315;
+}
+
+/* Option container */
+.optionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    max-width: 500px;
+    gap: 1vh;
+    padding-top: 1vh;
+}
+
+
+/* Timeline */
+.dateContainer {
+ display: flex;
+ align-items: center;
+ gap: 1vh;
+}
+.dateContainer p{
+    color: rgba(255, 255, 255, 0.582);
+    font-size: small;
+}
+/* Timeline buttons */
+.tmIcon{
+    width: 24px;
+    height: 24px;
+    color: red;
+}
+
+.buttonContainer{
+    display: flex;
+    gap: 1vh;
+}
+
+
+
+.tmButton {
+    border: none;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    background: rgba(255, 255, 255, 0.2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.tmButton:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+.tmButton:hover > .iconImage {
+    color: white;
+}
+
+@media (max-width: 1100px) {
+    .pageStart { 
+        display:flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .pageStart h2{ 
+        padding-bottom: 2vh;
+    }
+    .startText {
+        padding-bottom: 5vh;
+    }
+    .tmContainer {
+        width: fit-content;
+    }
+    .textContent {
+        padding: 5vh;
+    }
+    .textContent h2{
+        padding-bottom: 3vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .textContent { 
+        display:flex;
+        flex-direction: column; 
+    }
+}
