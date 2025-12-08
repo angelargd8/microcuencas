@@ -59,7 +59,7 @@ class MicrocuencaApp {
     }
 
     this.app.use(generalRateLimiter);
-    this.app.use(sanitizeResponse)
+    this.app.use(sanitizeResponse);
 
   }
 
@@ -94,7 +94,7 @@ class MicrocuencaApp {
   start() {
     const port = appConfig.port;
     
-    this.server = this.app.listen(port, () => {
+    this.server = this.app.listen(port, '0.0.0.0', () => {
       logger.info(`🌿 Servidor iniciado en puerto ${port}`, {
         environment: appConfig.nodeEnv,
         corsOrigins: appConfig.corsOrigins,
