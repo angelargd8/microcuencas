@@ -81,10 +81,10 @@
 
 /* Carrusel */
 .timeline-carrusel-wrapper { position: relative; margin-top: .4rem; overflow: visible; padding: 0 52px; }
-.timeline-carrusel { display: flex; gap: 1rem; justify-content: center; align-items: stretch; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.4rem 2.8rem 0.9rem; scrollbar-width: none; scroll-behavior: smooth; }
+.timeline-carrusel { display: flex; gap: 1rem; justify-content: flex-start; align-items: stretch; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 2.8rem; padding: 0.4rem 2.8rem 0.9rem; scrollbar-width: none; scroll-behavior: smooth; }
 .timeline-carrusel { -webkit-overflow-scrolling: touch; touch-action: pan-x; scroll-snap-stop: always; overscroll-behavior-x: contain; }
 .timeline-carrusel::-webkit-scrollbar { display: none; }
-.timeline-carrusel-card { background: linear-gradient(180deg,#ffffff 0%,#f6faf7 100%); border: 1px solid #dfe7df; border-radius: 18px; padding: 22px 20px 20px; width: clamp(240px, 80vw, 320px); max-width: 320px; flex: 0 0 auto; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; scroll-snap-align: center; transition: transform .16s ease, box-shadow .22s ease, border-color .22s ease; box-shadow: 0 2px 12px rgba(37,122,62,0.05); position: relative; z-index: 1; box-sizing: border-box; }
+.timeline-carrusel-card { background: linear-gradient(180deg,#ffffff 0%,#f6faf7 100%); border: 1px solid #dfe7df; border-radius: 18px; padding: 22px 20px 20px; width: clamp(240px, 80vw, 320px); max-width: 320px; flex: 0 0 auto; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; scroll-snap-align: start; transition: transform .16s ease, box-shadow .22s ease, border-color .22s ease; box-shadow: 0 2px 12px rgba(37,122,62,0.05); position: relative; z-index: 1; box-sizing: border-box; }
 .timeline-carrusel-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37,122,62,0.14); border-color: #c7dec9; }
 .timeline-carrusel-logo { height: 56px; width: auto; margin: 6px 0 12px; object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08)); }
 /* Fallback textual header (only if no logo) */

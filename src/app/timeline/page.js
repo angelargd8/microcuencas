@@ -41,47 +41,77 @@ export default function Timeline() {
 	const [year, setYear] = useState(2024);
 	const carruselRef = useRef(null);
 	const [currentIdx, setCurrentIdx] = useState(0);
+	const currentIdxRef = useRef(0);
+	const [canScrollLeft, setCanScrollLeft] = useState(false);
+	const [canScrollRight, setCanScrollRight] = useState(true);
   const noticiasFiltradas = noticias.filter(n => n.year === year);
 
-	// Datos dinámicos de carreras/facultades (añade/edita según necesites)
+	// Datos dinámicos de carreras/facultades
 	const carreras = [
-		{
-			codigoFac: 'ING',
-			facultadClase: 'ingenieria',
-			facultadNombre: 'FACULTAD DE INGENIERÍA',
-			programa: 'Ingeniería Civil',
-			bullets: [
-				'Propuestas de nuevas infraestructuras de saneamiento.',
-				'Plan de control de residuos sólidos.',
-				'Identificación de zonas críticas.'
-			],
-			logo: 'FacultadIngenieria.webp'
-		},
-		{
-			codigoFac: 'CCSS',
-			facultadClase: 'ccss',
-			facultadNombre: 'FACULTAD DE CIENCIAS SOCIALES',
-			programa: 'Antropología',
-			bullets: [
-				'Programa de sensibilización comunitaria.',
-				'Talleres educativos sobre beneficios de ecosistemas saludables.',
-				'Metodologías de participación social inclusiva.'
-			],
-			logo: 'facultadCienciasSociales.webp'
-		},
-		{
-			codigoFac: 'CCHH',
-			facultadClase: 'cchh',
-			facultadNombre: 'FACULTAD DE CIENCIAS Y HUMANIDADES',
-			programa: 'Biología / Bioquímica / Química',
-			bullets: [
-				'Monitoreo continuo de calidad de agua.',
-				'Identificación de zonas ecológicas críticas.',
-				'Programa de restauración ecológica.'
-			],
-			logo: 'facultadCienciasHumanidades.webp'
-		}
+
+	{
+		codigoFac: 'ING',
+		facultadClase: 'ingenieria',
+		facultadNombre: 'FACULTAD DE INGENIERÍA',
+		programa: 'Ingeniería Civil',
+		bullets: [
+		'Propuesta de nuevas infraestructuras de saneamiento.',
+		'Plan de control de residuos sólidos.',
+		'Identificación de zonas críticas.',
+		'Incentivar la instalación de plantas de tratamiento de aguas residuales a nivel domiciliario.'
+		],
+		logo: 'FacultadIngenieria.webp'
+	},
+	{
+		codigoFac: 'CCSS',
+		facultadClase: 'ccss',
+		facultadNombre: 'FACULTAD DE CIENCIAS SOCIALES',
+		programa: 'Antropología',
+		bullets: [
+		'Programa de sensibilización comunitaria.',
+		'Talleres educativos sobre los beneficios de ecosistemas saludables.',
+		'Metodología de participación social inclusiva.'
+		],
+		logo: 'facultadCienciasSociales.webp'
+	},
+	{
+		codigoFac: 'CCHH',
+		facultadClase: 'cchh',
+		facultadNombre: 'FACULTAD DE CIENCIAS Y HUMANIDADES',
+		programa: 'Biología / Bioquímica / Química',
+		bullets: [
+		'Monitoreo de calidad de agua mediante un sistema continuo.',
+		'Identificación de zonas ecológicas críticas.',
+		'Diseño e implementación de un programa de restauración ecológica (reforestación, protección de polinizadores, etc.).',
+		'Monitoreo de biodiversidad como indicador de recuperación ecosistémica.'
+		],
+		logo: 'facultadCienciasHumanidades.webp'
+	},
+	{
+		// codigoFac: 'COMM',
+		// facultadClase: 'comunicacion',
+		facultadNombre: 'FACULTAD DE HUMANIDADES, BRIDGE BUSINESS School y INGENIERÍA',
+		programa: 'Comunicación / Marketing / Computación',
+		bullets: [
+		'Campañas educativas dirigidas a diferentes públicos (empresas, vecinos, municipalidad) sobre importancia de los ecosistemas y del agua limpia.',
+		'Propuesta de app o plataforma de monitoreo participativo de calidad de agua y biodiversidad.'
+		],
+		
+	},
+	{
+		// codigoFac: 'INGI',
+		// facultadClase: 'industrial',
+		facultadNombre: 'FACULTAD DE INGENIERÍA',
+		programa: 'Ingeniería Industrial',
+		bullets: [
+		'Cronograma general y rutas críticas.',
+		'Matriz de costos estimados.',
+		'Definición de KPIs de avance por disciplina y para el proyecto completo.'
+		],
+		
+	}
 	];
+
 	const computeStep = useCallback(() => {
 		const el = carruselRef.current;
 		if (!el) return { step: 300, padLeft: 0, cardW: 280, gap: 16 };
@@ -95,26 +125,44 @@ export default function Timeline() {
 
 	const scrollToIndex = useCallback((index) => {
 		const el = carruselRef.current;
+		const maxIdx = Math.max(0, carreras.length - 1);
+		const nextIdx = Math.max(0, Math.min(index ?? 0, maxIdx));
+		setCurrentIdx(nextIdx); // keep index in sync even si no hay scroll
 		if (!el) return;
-		const total = Math.max(0, (index ?? 0));
-		const { step, padLeft, cardW } = computeStep();
-		const targetLeft = Math.max(0, (padLeft + step * total + (cardW / 2) - (el.clientWidth / 2)));
-		const maxLeft = el.scrollWidth - el.clientWidth;
-		el.scrollTo({ left: Math.min(targetLeft, maxLeft), behavior: 'smooth' });
-	}, [computeStep]);
+		const { step } = computeStep();
+		const targetLeft = Math.max(0, step * nextIdx);
+		const maxLeft = Math.max(0, el.scrollWidth - el.clientWidth);
+		const left = Math.min(targetLeft, maxLeft);
+		el.scrollTo({ left, behavior: 'smooth' });
+		setCanScrollLeft(left > 1);
+		setCanScrollRight(left < maxLeft - 1);
+	}, [computeStep, carreras.length]);
+
+	useEffect(() => {
+		currentIdxRef.current = currentIdx;
+	}, [currentIdx]);
 
 	useEffect(() => {
 		const el = carruselRef.current;
 		if (!el) return;
+		// Inicializa estado de flechas en primer render
+		const maxLeft = Math.max(0, el.scrollWidth - el.clientWidth);
+		setCanScrollLeft(false);
+		setCanScrollRight(maxLeft > 1);
 		const onScroll = () => {
-			const { step, padLeft } = computeStep();
-			const rel = Math.max(0, el.scrollLeft - padLeft);
-			const idx = Math.round(rel / step);
-			setCurrentIdx(Math.max(0, Math.min(idx, carreras.length - 1)));
+			const { step } = computeStep();
+			const idx = Math.round(el.scrollLeft / step);
+			const maxIdx = Math.max(0, carreras.length - 1);
+			const bounded = Math.max(0, Math.min(idx, maxIdx));
+			setCurrentIdx(bounded);
+			currentIdxRef.current = bounded;
+			const maxLeftInner = Math.max(0, el.scrollWidth - el.clientWidth);
+			setCanScrollLeft(el.scrollLeft > 1);
+			setCanScrollRight(el.scrollLeft < maxLeftInner - 1);
 		};
 		const onResize = () => {
 			onScroll();
-			scrollToIndex(currentIdx);
+			scrollToIndex(currentIdxRef.current);
 		};
 		el.addEventListener('scroll', onScroll, { passive: true });
 		window.addEventListener('resize', onResize);
@@ -124,7 +172,11 @@ export default function Timeline() {
 			el.removeEventListener('scroll', onScroll);
 			window.removeEventListener('resize', onResize);
 		};
-	}, [computeStep, scrollToIndex, currentIdx, carreras.length]);
+	}, [computeStep, scrollToIndex, carreras.length]);
+
+	useEffect(() => {
+		scrollToIndex(0);
+	}, [scrollToIndex]);
 
 	return (
 	<div className={timelineStyles["timeline-page"]}>
@@ -157,7 +209,7 @@ export default function Timeline() {
 					<div className={timelineStyles["timeline-carrusel-wrapper"]}>
 						<button className={`${timelineStyles["timeline-carrusel-arrow"]} ${timelineStyles["timeline-carrusel-arrow-left"]}`}
 							aria-label="Anterior"
-							disabled={currentIdx <= 0}
+							disabled={!canScrollLeft}
 							onClick={() => { const prev = Math.max(0, currentIdx - 1); scrollToIndex(prev); }}>
 			  &#60;
 			</button>
@@ -192,7 +244,7 @@ export default function Timeline() {
 			</div>
 						<button className={`${timelineStyles["timeline-carrusel-arrow"]} ${timelineStyles["timeline-carrusel-arrow-right"]}`}
 							aria-label="Siguiente"
-							disabled={currentIdx >= carreras.length - 1}
+							disabled={!canScrollRight}
 							onClick={() => { const next = Math.min(currentIdx + 1, carreras.length - 1); scrollToIndex(next); }}>
 			  &#62;
 			</button>
