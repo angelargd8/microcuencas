@@ -16,7 +16,7 @@ export default function About() {
             <div className={aboutStyles.titleSection}>
               <h1 className={aboutStyles.header}>Acerca de Nosotros</h1>
               <p className={aboutStyles.description}>
-                En "Salva a la Microcuenca", somos un equipo apasionado de ecologistas, educadores y voluntarios 
+                En &quot;Salva a la Microcuenca&quot;, somos un equipo apasionado de ecologistas, educadores y voluntarios 
                 comprometidos con la conservación de nuestros recursos hídricos. Nuestra organización nace de la
                 necesidad urgente de proteger las microcuencas, ecosistemas fundamentales que sustentan la vida en nuestra Tierra.
                 Juntos, podemos marcar la diferencia y salvar nuestras microcuencas.

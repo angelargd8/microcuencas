@@ -4,6 +4,7 @@ import { useState } from 'react';
 import adminStyles from "../admin.module.css";
 import '../../globals.css';
 import Navbar from "../../components/navbar";
+import Link from 'next/link';
 
 export default function AdminLogin() {
   const [formData, setFormData] = useState({
@@ -89,7 +90,6 @@ export default function AdminLogin() {
               </div>
               <a href="#" className={adminStyles.forgotPassword}>¿Olvidaste tu contraseña?</a>
             </div>
-
             {/* Submit Button */}
             <button type="submit" className={adminStyles.submitButton}>
               Iniciar Sesión
@@ -99,7 +99,9 @@ export default function AdminLogin() {
             <div className={adminStyles.quickAccess}>
               <div className={adminStyles.quickAccessTitle}>Acceso rápido al sitio:</div>
               <div className={adminStyles.quickAccessLinks}>
-                <a href="/" className={adminStyles.quickLink}>Página Principal</a>
+                <Link href="/" className={adminStyles.quickLink}>
+                Página Principal
+                </Link>
                 <a href="/about" className={adminStyles.quickLink}>Acerca del Proyecto</a>
                 <a href="/unirse" className={adminStyles.quickLink}>Unirse</a>
               </div>
