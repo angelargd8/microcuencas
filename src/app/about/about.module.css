@@ -87,7 +87,7 @@
   
   @media (max-width: 600px) {
       .aboutContainer {
-        padding: 25px;
+        padding: 35px;
       }
       .aboutGrid {
         display: block;
@@ -97,5 +97,9 @@
       }
       .header {
         font-size: 2.5rem;
+      }
+      .aboutContainer::before,
+      .aboutContainer::after {
+        margin-top: 40px;
       }
   }
