@@ -1,4 +1,4 @@
-## Microcuenca – Río Motagua
+## Microcuenca – Río Contreras
 
 Proyecto web elaborado con Next.js para documentar, comunicar y coordinar acciones relacionadas con la microcuenca pedagógica del Río Contreras y el entorno del río Motagua. Incluye secciones públicas informativas y un módulo administrativo para la publicación de noticias y contenido.
 
