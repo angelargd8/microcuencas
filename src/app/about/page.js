@@ -27,21 +27,20 @@ export default function About() {
             <div className={aboutStyles.section}>
               <h2 className={aboutStyles.sectionTitle}>Misión</h2>
               <p className={aboutStyles.sectionContent}>
-                Nuestra misión es proteger y restaurar las microcuencas a través de la 
-                educación, la participación comunitaria y la implementación de 
-                prácticas sostenibles. Trabajamos para garantizar el acceso a agua 
-                limpia y saludable, promoviendo la biodiversidad y el equilibrio 
-                ecológico en nuestras comunidades.
+                Impulsar proyectos, actividades y procesos educativos que 
+                fortalezcan la conciencia ambiental y la acción comunitaria 
+                en torno a la protección de las microcuencas. 
+                Facilitamos la colaboración entre actores locales y promovemos prácticas 
+                sostenibles que contribuyan al acceso a agua limpia y al cuidado de la biodiversidad.
               </p>
             </div>
             <div className={aboutStyles.section}>
               <h2 className={aboutStyles.sectionTitle}>Visión</h2>
               <p className={aboutStyles.sectionContent}>
-                Nuestra visión es proteger y restaurar las microcuencas a través de la 
-                educación, la participación comunitaria y la implementación de 
-                prácticas sostenibles. Trabajamos para garantizar el acceso a agua 
-                limpia y saludable, promoviendo la biodiversidad y el equilibrio 
-                ecológico en nuestras comunidades.
+                Proteger y restaurar las microcuencas mediante la educación, 
+                la participación comunitaria y la implementación de prácticas sostenibles. 
+                Aspiramos a garantizar el acceso a agua limpia y saludable, 
+                promoviendo la biodiversidad y el equilibrio ecológico en nuestras comunidades.
               </p>
             </div>
           </div>
