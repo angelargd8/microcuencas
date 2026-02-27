@@ -2,7 +2,7 @@
 
 Proyecto web elaborado con Next.js para documentar, comunicar y coordinar acciones relacionadas con la microcuenca pedagógica del Río Contreras y el entorno del río Motagua. Incluye secciones públicas informativas y un módulo administrativo para la publicación de noticias y contenido.
 
-Puede observarse <a href="https://microcuenca-ej7afimjr-angelas-projects-2f7fd8fc.vercel.app/"> Aqui </a>
+Puede observarse <a href="https://microcuenca-ej7afimjr-angelas-projects-2f7fd8fc.vercel.app/"> Aquí </a>
 ---
 
 ## Design Thinking – Fase de Empatía
