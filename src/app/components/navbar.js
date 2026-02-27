@@ -56,8 +56,8 @@ const Navbar = ({ className, isAdmin = false }) => {
       <nav className={styles.menu}>
         <Link className={isActive('/') ? styles.activeLink : ''} href="/">Inicio</Link>
         <Link className={isActive('/about') ? styles.activeLink : ''} href="/about">Acerca de</Link>
-        <Link className={isActive('/vis') ? styles.activeLink : ''} href="/vis">Visualizacion</Link>
-        <Link className={isActive('/galeria') ? styles.activeLink : ''} href="/galeria">Galeria</Link>
+        <Link className={isActive('/vis') ? styles.activeLink : ''} href="/vis">Visualización</Link>
+        <Link className={isActive('/galeria') ? styles.activeLink : ''} href="/galeria">Galería</Link>
         <Link className={isActive('/timeline') ? styles.activeLink : ''} href="/timeline">Noticias</Link>
         <Link className={isActive('/unirse') ? styles.activeLink : ''} href="/unirse">Unirse</Link>
         <div className={styles.adminMenu}>
@@ -98,8 +98,8 @@ const Navbar = ({ className, isAdmin = false }) => {
         <div className={styles.dropdownMenu}>
           <Link className={isActive('/') ? styles.activeLink : ''} href="/">Inicio</Link>
           <Link className={isActive('/about') ? styles.activeLink : ''} href="/about">Acerca de</Link>
-          <Link className={isActive('/vis') ? styles.activeLink : ''} href="/vis">Visualizacion</Link>
-          <Link className={isActive('/galeria') ? styles.activeLink : ''} href="/galeria">Galeria</Link>
+          <Link className={isActive('/vis') ? styles.activeLink : ''} href="/vis">Visualización</Link>
+          <Link className={isActive('/galeria') ? styles.activeLink : ''} href="/galeria">Galería</Link>
           <Link className={isActive('/timeline') ? styles.activeLink : ''} href="/timeline">Noticias</Link>
           <Link className={isActive('/unirse') ? styles.activeLink : ''} href="/unirse">Unirse</Link>
           <Link className={isActive('/admin/login') ? styles.activeLink : ''} href="/admin/login">Login</Link>
